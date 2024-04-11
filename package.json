@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/nfraper/CA_prueba#readme"
   },
-  "homepage": "https://github.com/nfraper/CA_prueba#readme"
+  "homepage": "https://github.com/nfraper/CA_prueba#readme",
+  "dependencies": {
+    "postmonger": "^0.0.16"
+  }
 }
