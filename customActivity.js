@@ -1,3 +1,5 @@
+import Postmonger from 'postmonger-master';
+
 var connection  = new Postmonger.Session();
 
 $(window).ready(onRender); // cuando esté lista la ventana del iframe llama a la función onRender
