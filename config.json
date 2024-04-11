@@ -1,0 +1,101 @@
+{
+    "workflowApiVersion": "1.1",
+    "name": "Custom Activity Name",
+    "description": "Custom Activity Description",
+    "metaData": {
+      "icon": "images/icon.svg",
+      "category": "message"
+    },
+    "type": "REST",
+    "lang": {
+      "en-US": {
+        "name": "Localized Custom Activity Name",
+        "description": "Localized Custom Activity Description",
+        "label1": "Localized Step 1",
+        "label2": "Localized Step 2",
+        "label3": "Localized Step 3"
+      }
+    },
+    "arguments": {
+      "execute": {
+        "inArguments": [
+            {"name": "Jhon"},
+            {"lastName": "Doe"}
+        ],
+        "outArguments": [
+          {
+            "returnValue": "default"
+          }
+        ],
+        "timeout": 10000,
+        "retryCount": 1,
+        "retryDelay": 1000,
+        "concurrentRequests": 6,
+        "url": "https://${req.headers.host}/modules/discount-code/execute",
+        "securityOptions": {
+          "securityType": "securityContext",
+          "securityContextKey": "EXTERNAL_KEY"
+        }
+      }
+    },
+    "configurationArguments": {
+      "save": {
+        "url": "https://${req.headers.host}/modules/discount-code/save",
+        "securityOptions": {
+          "securityType": "securityContext",
+          "securityContextKey": "EXTERNAL_KEY"
+        }
+      },
+      "publish": {
+        "url": "https://${req.headers.host}/modules/discount-code/publish",
+        "securityOptions": {
+          "securityType": "securityContext",
+          "securityContextKey": "EXTERNAL_KEY"
+        }
+      },
+      "validate": {
+        "url": "https://${req.headers.host}/modules/discount-code/validate",
+        "securityOptions": {
+          "securityType": "securityContext",
+          "securityContextKey": "EXTERNAL_KEY"
+        }
+      },
+      "stop": {
+        "url": "https://${req.headers.host}/modules/discount-code/stop",
+        "securityOptions": {
+          "securityType": "securityContext",
+          "securityContextKey": "EXTERNAL_KEY"
+        }
+      }
+    },
+   
+    "schema": {
+      "arguments": {
+        "execute": {
+          "inArguments": [
+            {
+              "name": {
+                "dataType": "String",
+                "isNullable": false,
+                "direction": "in"
+              },
+              "lastName": {
+                "dataType": "String",
+                "isNullable": false,
+                "direction": "in"
+              }
+            }
+          ],
+          "outArguments": [
+            {
+              "returnValue": {
+                "dataType": "Text",
+                "isNullable": false,
+                "direction": "out"
+              }
+            }
+          ]
+        }
+      }
+    }
+  }
